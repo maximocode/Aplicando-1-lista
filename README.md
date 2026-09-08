@@ -3,7 +3,7 @@
 Esta lista de tareas cuenta con:
 
 - Menú Principal
-- Menu Ver Tareas
+- Menú Ver Tareas
 - Menú Buscar Tareas (por su nombre)
 - Menú Agregar Tareas
 
