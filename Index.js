@@ -174,10 +174,39 @@ function Detalles(tareaEncontrada) {
     }
 }
 
-function editarTarea(tareaEncontrada){ //sin terminar
-    console.log("Estas editando la tarea: " + tareaEncontrada.Titulo + "\n");
-
+function editarTarea(tareaEncontrada){ 
+    console.log("Estas editando la tarea: " + tareaEncontrada.Titulo + "\n" +
+        "- Si desea mantener cualquier valor, simplemente deje en blanco. \n" +
+        "- Si quiere dejar en blanco un campo, escriba un espacio. \n");
+    let nuevoTitulo = prompt("Ingrese el nuevo título de la tarea: \n");
+    tareaEncontrada.Titulo = resolverValor(nuevoTitulo, tareaEncontrada.Titulo);
+    let nuevaDescripcion = prompt("Ingrese la nueva descripción de la tarea: \n");
+    tareaEncontrada.Descripcion = resolverValor(nuevaDescripcion, tareaEncontrada.Descripcion);
+    let nuevaDificultad;
+    do{
+        nuevaDificultad = prompt("Ingrese la nueva dificultad de la tarea (1-3): \n");
+    }while (nuevaDificultad !== "" && nuevaDificultad !== " " && (nuevaDificultad < "1" || nuevaDificultad > "3"));
+    tareaEncontrada.Dificultad = parseInt(resolverValor(nuevaDificultad, tareaEncontrada.Dificultad));
+    let nuevoEstado;
+    do {
+      nuevoEstado = prompt("2. Estado ([P]/[E]/[T]/[C]): ");
+    } while (nuevoEstado !== "" && nuevoEstado !== " " && nuevoEstado !== "P" && nuevoEstado !== "E" && nuevoEstado !== "T" && nuevoEstado !== "C");
+    tareaEncontrada.Estado = resolverValor(nuevoEstado, tareaEncontrada.Estado);
+    let nuevaFechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento de la tarea (dd/mm/aaaa): \n");
+    tareaEncontrada.Vencimiento = resolverValor(nuevaFechaVencimiento, tareaEncontrada.Vencimiento);
+    console.log("Tarea editada correctamente: \n");
 }
+
+function resolverValor(valorNuevo, valorViejo) {
+    if (valorNuevo === "") {
+        return valorViejo;
+    } else if (valorNuevo === " ") {
+        return "";
+    } else {
+        return valorNuevo;
+    }
+}
+
 
 function agregarTarea(Tareas) {
     let titulo = prompt("Ingrese el título de la tarea: \n");
