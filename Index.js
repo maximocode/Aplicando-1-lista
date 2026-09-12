@@ -191,8 +191,8 @@ function editarTarea(tareaEncontrada){
     tareaEncontrada.Dificultad = parseInt(resolverValor(nuevaDificultad, tareaEncontrada.Dificultad));
     let nuevoEstado;
     do {
-      nuevoEstado = prompt("2. Estado ([P]/[E]/[T]/[C]): ");
-    } while (nuevoEstado !== "" && nuevoEstado !== " " && nuevoEstado !== "P" && nuevoEstado !== "E" && nuevoEstado !== "T" && nuevoEstado !== "C");
+      nuevoEstado = prompt("2. Estado ([P]/[E]/[C]): ");
+    } while (nuevoEstado !== "" && nuevoEstado !== " " && nuevoEstado !== "P" && nuevoEstado !== "E" && nuevoEstado !== "C");
     tareaEncontrada.Estado = resolverValor(nuevoEstado, tareaEncontrada.Estado);
     let nuevaFechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento de la tarea (dd/mm/aaaa): ");
     tareaEncontrada.Vencimiento = resolverValor(nuevaFechaVencimiento, tareaEncontrada.Vencimiento);
@@ -214,16 +214,7 @@ function agregarTarea() {
     }while (estado !== "P" && estado !== "E" && estado !== "C");
     let vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (dd/mm/aaaa): ");
 
-    let nuevaTarea = {
-        ID:ID++,
-        Titulo: titulo,
-        Descripcion: descripcion,
-        Estado: estado,
-        Vencimiento: vencimiento,
-        Creacion: new Date().toLocaleDateString(),
-        Dificultad: dificultad
-    };
-    Tareas.push(nuevaTarea);
+    crearTarea(titulo, descripcion, dificultad, estado, vencimiento);
 }
 
 function buscarTarea(Tareas) {
