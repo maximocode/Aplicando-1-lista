@@ -35,7 +35,6 @@ do {//menu principal
 } while (op !== 4);
 
 function verTareas(Tareas) {
-    let aux;
     let idsMostrados = [];
     let op;
     do{
@@ -57,17 +56,7 @@ function verTareas(Tareas) {
                     console.log("[" + Tareas[i].ID + "]" + Tareas[i].Titulo + "\n");
                     idsMostrados.push(Tareas[i].ID);
                 }
-                do{
-                  console.log("Desea ver el detalle de alguna tarea?\n");
-                  console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
-                  aux = parseInt(prompt());
-                }while (aux !== 0 && aux > idsMostrados.length);
-                if(aux !== 0){
-                 let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
-                 Detalles(tareaEncontrada);
-                } else {
-                    console.log("Saliendo...");
-                }
+                verDetalles(Tareas, idsMostrados);
               break;
             case 2:
                 for(let i=0; i<Tareas.length; i++){
@@ -76,17 +65,7 @@ function verTareas(Tareas) {
                         idsMostrados.push(Tareas[i].ID);
                     }
                 }
-                do{
-                  console.log("Desea ver el detalle de alguna tarea?\n");
-                  console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
-                   aux = parseInt(prompt());
-                }while (aux !== 0 && aux > idsMostrados.length);
-                if(aux !== 0){
-                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
-                  Detalles(tareaEncontrada);
-                } else {
-                    console.log("Saliendo...");
-                }
+                verDetalles(Tareas, idsMostrados);
                 break;
             case 3:
                 for(let i=0; i<Tareas.length; i++){
@@ -95,17 +74,7 @@ function verTareas(Tareas) {
                         idsMostrados.push(Tareas[i].ID);
                     }
                 }
-                do{
-                  console.log("Desea ver el detalle de alguna tarea?\n");
-                  console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
-                   aux = parseInt(prompt());
-                }while (aux !== 0 && aux > idsMostrados.length);
-                if(aux !== 0){
-                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
-                  Detalles(tareaEncontrada);
-                } else {
-                    console.log("Saliendo...");
-                }
+                verDetalles(Tareas, idsMostrados);
                 break;
             case 4:
                 for(let i=0; i<Tareas.length; i++){
@@ -114,17 +83,7 @@ function verTareas(Tareas) {
                         idsMostrados.push(Tareas[i].ID);
                     }
                 }
-                do{
-                  console.log("Desea ver el detalle de alguna tarea?\n");
-                  console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
-                   aux = parseInt(prompt());
-                }while (aux !== 0 && aux > idsMostrados.length);
-                if(aux !== 0){
-                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
-                  Detalles(tareaEncontrada);
-                } else {
-                    console.log("Saliendo...");
-                }
+                verDetalles(Tareas, idsMostrados);
                 break;
             case 0:
                 console.log("Saliendo...");
