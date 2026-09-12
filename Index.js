@@ -180,13 +180,13 @@ function editarTarea(tareaEncontrada){
     console.log("Estas editando la tarea: " + tareaEncontrada.Titulo + "\n" +
         "- Si desea mantener cualquier valor, simplemente deje en blanco. \n" +
         "- Si quiere dejar en blanco un campo, escriba un espacio. \n");
-    let nuevoTitulo = prompt("Ingrese el nuevo título de la tarea: \n");
+    let nuevoTitulo = prompt("Ingrese el nuevo título de la tarea: ");
     tareaEncontrada.Titulo = resolverValor(nuevoTitulo, tareaEncontrada.Titulo);
-    let nuevaDescripcion = prompt("Ingrese la nueva descripción de la tarea: \n");
+    let nuevaDescripcion = prompt("Ingrese la nueva descripción de la tarea: ");
     tareaEncontrada.Descripcion = resolverValor(nuevaDescripcion, tareaEncontrada.Descripcion);
     let nuevaDificultad;
     do{
-        nuevaDificultad = prompt("Ingrese la nueva dificultad de la tarea (1-3): \n");
+        nuevaDificultad = prompt("Ingrese la nueva dificultad de la tarea (1-3): ");
     }while (nuevaDificultad !== "" && nuevaDificultad !== " " && (nuevaDificultad < "1" || nuevaDificultad > "3"));
     tareaEncontrada.Dificultad = parseInt(resolverValor(nuevaDificultad, tareaEncontrada.Dificultad));
     let nuevoEstado;
@@ -194,25 +194,14 @@ function editarTarea(tareaEncontrada){
       nuevoEstado = prompt("2. Estado ([P]/[E]/[T]/[C]): ");
     } while (nuevoEstado !== "" && nuevoEstado !== " " && nuevoEstado !== "P" && nuevoEstado !== "E" && nuevoEstado !== "T" && nuevoEstado !== "C");
     tareaEncontrada.Estado = resolverValor(nuevoEstado, tareaEncontrada.Estado);
-    let nuevaFechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento de la tarea (dd/mm/aaaa): \n");
+    let nuevaFechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento de la tarea (dd/mm/aaaa): ");
     tareaEncontrada.Vencimiento = resolverValor(nuevaFechaVencimiento, tareaEncontrada.Vencimiento);
     console.log("Tarea editada correctamente: \n");
 }
 
-function resolverValor(valorNuevo, valorViejo) {
-    if (valorNuevo === "") {
-        return valorViejo;
-    } else if (valorNuevo === " ") {
-        return "";
-    } else {
-        return valorNuevo;
-    }
-}
-
-
-function agregarTarea(Tareas) {
-    let titulo = prompt("Ingrese el título de la tarea: \n");
-    let descripcion = prompt("Ingrese la descripción de la tarea: \n");
+function agregarTarea() {
+    let titulo = prompt("Ingrese el título de la tarea: ");
+    let descripcion = prompt("Ingrese la descripción de la tarea: ");
     let dificultad;
     do{
         console.log("Ingrese la dificultad de la tarea (1-3): \n");
@@ -223,7 +212,7 @@ function agregarTarea(Tareas) {
         console.log("Ingrese el estado de la tarea ([P]endiente, [E]n curso, [C]ompletada): \n");
         estado = prompt();
     }while (estado !== "P" && estado !== "E" && estado !== "C");
-    let vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (dd/mm/aaaa): \n");
+    let vencimiento = prompt("Ingrese la fecha de vencimiento de la tarea (dd/mm/aaaa): ");
 
     let nuevaTarea = {
         ID:ID++,
@@ -238,7 +227,7 @@ function agregarTarea(Tareas) {
 }
 
 function buscarTarea(Tareas) {
-    const busqueda = prompt("Ingrese el título de la tarea que desea buscar: \n");
+    const busqueda = prompt("Ingrese el título de la tarea que desea buscar: ");
     let tareasEncontradas = [];
     let aux;
     for (let i = 0; i < Tareas.length; i++) {
