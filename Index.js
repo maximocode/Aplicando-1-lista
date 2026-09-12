@@ -1,7 +1,6 @@
 const prompt = require('prompt-sync')();
 const { Tareas, crearTarea, resolverValor} = require("./modelo/tareas.js");
 
-let tareaEncontrada;
 let op;
 
 console.log("Buenos días!! Bienvenido a la aplicación de Tareas");
@@ -63,12 +62,7 @@ function verTareas(Tareas) {
                   aux = parseInt(prompt());
                 }while (aux !== 0 && aux > idsMostrados.length);
                 if(aux !== 0){
-                    for (let i = 0; i < idsMostrados.length; i++) {
-                      if (idsMostrados[i] === aux) {
-                         tareaEncontrada = Tareas[i];
-                         break;
-                        }
-                    }
+                 let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
                  Detalles(tareaEncontrada);
                 } else {
                     console.log("Saliendo...");
@@ -87,12 +81,7 @@ function verTareas(Tareas) {
                    aux = parseInt(prompt());
                 }while (aux !== 0 && aux > idsMostrados.length);
                 if(aux !== 0){
-                    for (let i = 0; i < idsMostrados.length; i++) {
-                      if (idsMostrados[i] === aux) {
-                        tareaEncontrada = Tareas[i];
-                        break;
-                      }
-                    }
+                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
                   Detalles(tareaEncontrada);
                 } else {
                     console.log("Saliendo...");
@@ -111,12 +100,7 @@ function verTareas(Tareas) {
                    aux = parseInt(prompt());
                 }while (aux !== 0 && aux > idsMostrados.length);
                 if(aux !== 0){
-                    for (let i = 0; i < idsMostrados.length; i++) {
-                      if (idsMostrados[i] === aux) {
-                        tareaEncontrada = Tareas[i];
-                        break;
-                      }
-                    }
+                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
                   Detalles(tareaEncontrada);
                 } else {
                     console.log("Saliendo...");
@@ -135,12 +119,7 @@ function verTareas(Tareas) {
                    aux = parseInt(prompt());
                 }while (aux !== 0 && aux > idsMostrados.length);
                 if(aux !== 0){
-                    for (let i = 0; i < idsMostrados.length; i++) {
-                      if (idsMostrados[i] === aux) {
-                        tareaEncontrada = Tareas[i];
-                        break;
-                      }
-                    }
+                  let tareaEncontrada = buscarID(Tareas, aux, idsMostrados);
                   Detalles(tareaEncontrada);
                 } else {
                     console.log("Saliendo...");
