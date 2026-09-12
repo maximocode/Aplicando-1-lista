@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')();
-const { Tareas, crearTarea, resolverValor} = require("./modelo/tareas.js");
+const { Tareas, crearTarea, resolverValor, buscarID} = require("./modelo/tareas.js");
+const { mostrarDetalles } = require("./vista/tareas.js");
 
 let op;
 
@@ -135,16 +136,8 @@ function verTareas(Tareas) {
 }
 
 function Detalles(tareaEncontrada) {
+    mostrarDetalles(tareaEncontrada);
     let aux2;
-    console.log("---------------------------------------- \n");
-    console.log("Detalles de la tarea: \n");
-    console.log("ID: " + tareaEncontrada.ID + "\n" +
-        "Título: " + tareaEncontrada.Titulo + "\n" +
-        "Descripción: " + tareaEncontrada.Descripcion + "\n" +
-        "Estado: " + tareaEncontrada.Estado + "\n" +
-        "Vencimiento: " + tareaEncontrada.Vencimiento + "\n" +
-        "Creación: " + tareaEncontrada.Creacion + "\n" +
-        "Dificultad: " + tareaEncontrada.Dificultad + "\n");
     do{
         console.log("Desea editar algo de la tarea?\n");
         console.log("[1] si" + "[0] no\n");
