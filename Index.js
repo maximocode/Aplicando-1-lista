@@ -76,7 +76,7 @@ function verTareas(Tareas) {
               break;
             case 2:
                 for(let i=0; i<Tareas.length; i++){
-                    if(Tareas[i].Estado === "Pendiente"){
+                    if(Tareas[i].Estado === "P"){
                         console.log(Tareas[i].Titulo);
                         idsMostrados.push(Tareas[i].ID);
                     }
@@ -100,7 +100,7 @@ function verTareas(Tareas) {
                 break;
             case 3:
                 for(let i=0; i<Tareas.length; i++){
-                    if(Tareas[i].Estado === "En curso"){
+                    if(Tareas[i].Estado === "E"){
                         console.log(Tareas[i].Titulo);
                         idsMostrados.push(Tareas[i].ID);
                     }
@@ -124,7 +124,7 @@ function verTareas(Tareas) {
                 break;
             case 4:
                 for(let i=0; i<Tareas.length; i++){
-                    if(Tareas[i].Estado === "Completada"){
+                    if(Tareas[i].Estado === "C"){
                         console.log(Tareas[i].Titulo);
                         idsMostrados.push(Tareas[i].ID);
                     }
