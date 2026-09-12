@@ -1,19 +1,19 @@
 const prompt = require('prompt-sync')();
+const { Tareas, crearTarea, resolverValor} = require("./modelo/tareas.js");
 
-let ID = 1;
-
-let Tareas = [];
 let tareaEncontrada;
+let op;
 
 console.log("Buenos días!! Bienvenido a la aplicación de Tareas");
-do {
+do {//menu principal
     console.log("---------------------------------------- \n");
-    console.log("¿Qué deseas hacer?");//menu principal
-    let op = parseInt(prompt("[1] Ver mis Tareas\n"+
+    console.log("¿Qué deseas hacer?");
+    console.log("[1] Ver mis Tareas\n"+
         "[2] Agregar una Tarea\n"+
         "[3] Buscar una Tarea\n"+
         "[4] Salir\n"
-    ));
+    );
+    op = parseInt(prompt());
     console.log("---------------------------------------- \n");
 
     switch (op) {
@@ -21,7 +21,7 @@ do {
             verTareas(Tareas);
             break;
         case 2:
-            agregarTarea(Tareas);
+            agregarTarea();
             break;
         case 3:
             buscarTarea(Tareas);
@@ -37,15 +37,17 @@ do {
 function verTareas(Tareas) {
     let aux;
     let idsMostrados = [];
+    let op;
     do{
         console.log("---------------------------------------- \n");
         console.log("Que tareas deseas ver?"); //menu ver tareas
-        let op = parseInt(prompt("[1] Todas\n"+
+        console.log("[1] Todas\n"+
             "[2] Pendientes\n"+
             "[3] En curso\n"+
             "[4] Completadas\n"+
             "[0] Salir\n"
-        ));
+        );
+        op = parseInt(prompt());
         console.log("---------------------------------------- \n");
 
         switch (op) {
