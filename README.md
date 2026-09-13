@@ -16,4 +16,8 @@ Estas están almacenadas en un vector llamado **Tareas**. El cual se va llenando
 Tareas.push(nuevaTarea);
 ```
 ### Módulos
-Falta la modulización, seria lo proximo a agregar.
+La carpeta **Controlador** contiene todas las funciones que interactuan con el usuario mediante prompt().
+
+La carpeta **Modelo** tiene la función que crea la estructura de las tareas y el vector que las almacena, la función que resuelve que es lo que quiere guardar en un posible edición y la función que busca una tarea segun su ID.
+
+La carpeta **Vista** contiene menu principal y ver tareas, función que pregunta si quiere ver detalles y la de los Detalles misma.
