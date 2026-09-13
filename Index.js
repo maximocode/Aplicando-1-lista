@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')();
-const { Tareas, crearTarea} = require("./modelo/tareas.js");
+const { Tareas} = require("./modelo/tareas.js");
+const { verTareas, agregarTarea, buscarTarea } = require("./controlador/tareas.js");
 
 let op;
 
