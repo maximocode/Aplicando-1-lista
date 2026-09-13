@@ -27,4 +27,16 @@ function preguntarDetalle() {
     console.log("Desea ver el detalle de alguna tarea?\n");
     console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
 }    
-module.exports = {mostrarDetalles, menuVerTareas, preguntarDetalle};
+
+function menuPrincipal() {
+    console.log("---------------------------------------- \n");
+    console.log("¿Qué deseas hacer?");
+    console.log("[1] Ver mis Tareas\n"+
+        "[2] Agregar una Tarea\n"+
+        "[3] Buscar una Tarea\n"+
+        "[4] Salir\n"
+    );
+    console.log("---------------------------------------- \n");
+}
+
+module.exports = {mostrarDetalles, menuVerTareas, preguntarDetalle, menuPrincipal};
