@@ -22,4 +22,9 @@ function menuVerTareas() {
         );
         console.log("---------------------------------------- \n");
 }
-module.exports = {mostrarDetalles, menuVerTareas};
+
+function preguntarDetalle() {
+    console.log("Desea ver el detalle de alguna tarea?\n");
+    console.log("Ingrese el ID de la tarea que desea ver o 0 para salir\n");
+}    
+module.exports = {mostrarDetalles, menuVerTareas, preguntarDetalle};
