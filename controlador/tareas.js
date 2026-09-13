@@ -1,21 +1,13 @@
 const prompt = require('prompt-sync')();
-const { mostrarDetalles } = require("../vista/tareas.js");
+const { mostrarDetalles, menuVerTareas } = require("../vista/tareas.js");
 const { buscarID, resolverValor, crearTarea } = require("../modelo/tareas.js");
 
 function verTareas(Tareas) {
     let idsMostrados = [];
     let op;
     do{
-        console.log("---------------------------------------- \n");
-        console.log("Que tareas deseas ver?"); //menu ver tareas
-        console.log("[1] Todas\n"+
-            "[2] Pendientes\n"+
-            "[3] En curso\n"+
-            "[4] Completadas\n"+
-            "[0] Salir\n"
-        );
+        menuVerTareas();
         op = parseInt(prompt());
-        console.log("---------------------------------------- \n");
 
         switch (op) {
             case 1:
